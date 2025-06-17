@@ -2,102 +2,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rutina RPG de Andrea</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(to right, #dfe9f3, #ffffff);
-      margin: 0;
-      padding: 2rem;
-      color: #333;
-    }
-    h1, h2 {
-      text-align: center;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .task {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem;
-      margin: 0.3rem 0;
-      border-radius: 10px;
-      background-color: #f4f4f8;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    }
-    .task input[type="checkbox"] {
-      transform: scale(1.5);
-    }
-    .rewards, .points {
-      text-align: center;
-      font-size: 1.2rem;
-    }
-    .lumie {
-      background-color: #fce4ec;
-      padding: 1rem;
-      border-radius: 15px;
-      margin-top: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina Semanal - Lumie</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>🌟 Rutina RPG Semanal 🌟</h1>
-
-  <div class="section">
-    <h2>Tareas Diarias</h2>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(5)"> Pasear a Sarabi y Nemea (mañana)</label></div>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(5)"> Pasear a Sarabi y Nemea (tarde)</label></div>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(3)"> Hacer cama y recoger habitación</label></div>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(3)"> Fregar/recoger cocina</label></div>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(4)"> Preparar mochila/tupper/ropa</label></div>
-  </div>
-
-  <div class="section">
-    <h2>Tareas Semanales</h2>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(10)"> Ir al gimnasio</label></div>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(10)"> Limpiar casa/coche</label></div>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(8)"> Leer o avanzar en algún hobby</label></div>
-    <div class="task"><label><input type="checkbox" onchange="addPoints(10)"> Avanzar en objetivos personales</label></div>
-  </div>
-
-  <div class="points">
-    <strong>Puntos actuales: <span id="score">0</span></strong>
-  </div>
-
-  <div class="section rewards">
-    <h2>Recompensas 🎁</h2>
-    <ul>
-      <li>🎮 15 pts: Tiempo de juego</li>
-      <li>🍦 10 pts: Un helado rico</li>
-      <li>📺 10 pts: Episodio de serie</li>
-      <li>🛁 20 pts: Baño largo sin interrupciones</li>
-      <li>🧘‍♀️ 25 pts: Día sin decisiones</li>
-    </ul>
-  </div>
-
-  <div class="lumie">
-    <h2>🌈 Rincón de Lumie</h2>
-    <p>¡Hola, Andrea! Soy Lumie, tu acompañante digital. Estoy aquí para animarte cada día. ¡Puedes con todo! 💪</p>
-    <p>Recuerda: si marcas 3 tareas seguidas, ¡hay confeti de celebración! 🎉</p>
-  </div>
-
-  <script>
-    let score = 0;
-    function addPoints(pts) {
-      score += pts;
-      document.getElementById('score').innerText = score;
-      if (score % 15 < pts) {
-        confetti();
-      }
-    }
-    function confetti() {
-      alert('🎉 ¡Bien hecho, Andrea! ¡Sigue así! 🎉');
-    }
-  </script>
+    <header>
+        <h1>🌟 Bienvenida, Andrea 🌟</h1>
+        <p>Tu rutina semanal gamificada con Lumie</p>
+    </header>
+    <section id="routine">
+        <h2>✅ Tareas diarias</h2>
+        <ul id="tasks-list">
+            <li><input type="checkbox"> Pasear a las perras 🐾</li>
+            <li><input type="checkbox"> Limpiar el salón 🧹</li>
+            <li><input type="checkbox"> Tirar la basura ♻️</li>
+            <li><input type="checkbox"> Hacer test autoescuela 🚗</li>
+            <li><input type="checkbox"> Estudiar trabajo 📚</li>
+        </ul>
+    </section>
+    <section id="calendar">
+        <h2>📆 Horario semanal</h2>
+        <p>Lunes: 8:30h a 17h<br>
+           Martes: 07h a 16h<br>
+           Miércoles: 08:30h a 17h<br>
+           Jueves: 16:30h a 01h<br>
+           Viernes: 08h a 17h<br>
+           Sábado y Domingo: Libre 🎉</p>
+    </section>
+    <section id="rewards">
+        <h2>🎁 Recompensas</h2>
+        <ul>
+            <li>Ver una serie 🍿 - 5 pts</li>
+            <li>Un helado 🍦 - 10 pts</li>
+            <li>Plan con Ana 💑 - 15 pts</li>
+        </ul>
+    </section>
+    <footer>
+        <p>Con cariño, Lumie ✨</p>
+    </footer>
 </body>
 </html>
